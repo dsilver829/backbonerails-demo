@@ -1,2 +1,0 @@
-backbonerails-demo
-==================
