@@ -1,15 +1,15 @@
 @Demo.module "FooterApp", (FooterApp, App, Backbone, Marionette, $, _) ->
-#  @startWithParent = false
+  @startWithParent = false
 
   API =
     showFooter: ->
       FooterApp.Show.Controller.showFooter()
 
+  FooterApp.on "start", ->
+    API.showFooter()
+
 #  App.addInitializer ->
 #    API.showFooter()
 
-#  FooterApp.on "start", ->
+#  App.commands.addHandler "footer:show", ->
 #    API.showFooter()
-
-  App.commands.addHandler "footer:show", ->
-    API.showFooter()
