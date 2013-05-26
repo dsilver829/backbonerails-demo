@@ -7,9 +7,3 @@
 
   FooterApp.on "start", ->
     API.showFooter()
-
-#  App.addInitializer ->
-#    API.showFooter()
-
-#  App.commands.addHandler "footer:show", ->
-#    API.showFooter()
