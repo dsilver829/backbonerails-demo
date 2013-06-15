@@ -1,3 +1,3 @@
-collection @users
+object @user
 
 extends "users/_base"
