@@ -6,12 +6,15 @@
 		headerRegion: "#header-region"
 		mainRegion: "#main-region"
 		footerRegion: "#footer-region"
+
+  App.on "initialize:before", (options) ->
+    @currentUser = App.request "set:current:user", options.currentUser
 	
 	App.addInitializer ->
 		App.module("HeaderApp").start()
 		App.module("FooterApp").start()
 	
-	App.on "initialize:after", ->
+	App.on "initialize:after", (options) ->
 		if Backbone.history
 			Backbone.history.start()
 	
