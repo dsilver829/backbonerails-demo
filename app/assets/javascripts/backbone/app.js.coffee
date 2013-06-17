@@ -1,6 +1,8 @@
 @Demo = do (Backbone, Marionette) ->
 	
 	App = new Marionette.Application
+
+  App.rootRoute = "users"
 	
 	App.addRegions
 		headerRegion: "#header-region"
@@ -20,5 +22,12 @@
 	App.on "initialize:after", (options) ->
 		if Backbone.history
 			Backbone.history.start()
+      @navigate(rootRoute) if @getCurrentRoute() is ""
+
+  App.navigate = (route) ->
+    Backbone.history.navigate route
+
+  App.getCurrentRoute = ->
+    Backbone.history.fragment
 	
 	App
