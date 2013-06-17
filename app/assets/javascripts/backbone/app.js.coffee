@@ -7,6 +7,9 @@
 		mainRegion: "#main-region"
 		footerRegion: "#footer-region"
 
+  App.reqres.addHandler "get:current:user", ->
+    App.currentUser
+
   App.on "initialize:before", (options) ->
     @currentUser = App.request "set:current:user", options.currentUser
 	
